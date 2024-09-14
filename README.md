@@ -39,7 +39,7 @@ _textboxTahun() {
 }
 ```
 
-## 2. Validasi dan Konversi
+### 2. Validasi dan Konversi
 
 Data dari `TextEditingController()` diambil saat pengguna menekan tombol "Simpan". Jika form valid setelah `_formKey.currentState!.validate()` dipanggil, maka nilai dari masing-masing controller akan diambil dan disimpan ke dalam variabel. Selain itu, data tahun diubah menjadi integer dengan `int.parse()`
 
@@ -51,7 +51,7 @@ void _submitForm() {
     int tahun = int.parse(_tahunController.text);
 ```
 
-## 3. Navigasi dan Passing Data
+### 3. Navigasi dan Passing Data
 
 Setelah data valid, program melakukan navigasi ke halaman baru `TampilData`, navigasi dilakukan melalui `Navigator` menggunakan `Navigator.of(context).push()` dan mengirim data melalui konstruktor.
 
@@ -62,7 +62,7 @@ Setelah data valid, program melakukan navigasi ke halaman baru `TampilData`, nav
           TampilData(nama: nama, nim: nim, tahun: tahun),
 ```
 
-## 4. Data diterima pada TampilData
+### 4. Data diterima pada TampilData
 
 Data yang dikirim dari form diterima `TampilData` melalui konstruktor dan disimpan dalam variabel final.
 
@@ -82,7 +82,7 @@ class TampilData extends StatelessWidget {
 }
 ```
 
-## 5. Menampilkan Data Setelah Diolah
+### 5. Menampilkan Data Setelah Diolah
 
 Method build dari `TampilData` menggunakan data yang diterima untuk menampilkan informasi, data seperti nama, NIM, dan Umur (yang merupakan perhitungan dari input tahun lahir dengan cara mengurangi tahun sekarang dengan input tahun lahir `DateTime.now().year - tahun`) ditampilkan di layar.
 

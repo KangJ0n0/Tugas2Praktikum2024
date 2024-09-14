@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class TampilData extends StatelessWidget {
   final String nama;
@@ -21,43 +22,42 @@ class TampilData extends StatelessWidget {
         title: const Text("Perkenalan"),
       ),
       body: Center(
-        // Pusatkan konten di tengah layar
-        child: Container(
-          padding: const EdgeInsets.all(20),
-          margin: const EdgeInsets.all(10),
-          decoration: BoxDecoration(
-            color: const Color(0xFFCCE5FF),
-            borderRadius: BorderRadius.circular(10),
-            boxShadow: [
-              BoxShadow(
-                color: Colors.grey.withOpacity(0.5),
-                spreadRadius: 5,
-                blurRadius: 7,
-                offset: const Offset(0, 3),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const Icon(
+              Icons.account_circle,
+              size: 100,
+              color: Colors.blue,
+            ),
+            const SizedBox(height: 20),
+            Text(
+              "Nama : $nama",
+              style: GoogleFonts.roboto(
+                fontSize: 22,
+                fontWeight: FontWeight.bold,
+                color: Colors.black87,
               ),
-            ],
-          ),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Center(
-                child: Text(
-                  "Identitas",
-                  style: TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
+            ),
+            const SizedBox(height: 10),
+            Text(
+              "NIM : $nim",
+              style: GoogleFonts.roboto(
+                fontSize: 22,
+                fontWeight: FontWeight.bold,
+                color: Colors.black87,
               ),
-              const SizedBox(height: 10),
-              Text("Nama : $nama", style: const TextStyle(fontSize: 16)),
-              const SizedBox(height: 5),
-              Text("NIM : $nim", style: const TextStyle(fontSize: 16)),
-              const SizedBox(height: 5),
-              Text("Umur : $umur tahun", style: const TextStyle(fontSize: 16)),
-            ],
-          ),
+            ),
+            const SizedBox(height: 10),
+            Text(
+              "Umur : $umur tahun",
+              style: GoogleFonts.roboto(
+                fontSize: 22,
+                fontWeight: FontWeight.bold,
+                color: Colors.black87,
+              ),
+            ),
+          ],
         ),
       ),
     );

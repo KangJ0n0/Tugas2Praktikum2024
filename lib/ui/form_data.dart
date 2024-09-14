@@ -22,16 +22,32 @@ class FormDataState extends State<FormData> {
         title: const Text("Input Data"),
       ),
       body: Container(
-        margin: const EdgeInsets.all(10),
+        color: Colors.blue.shade100,
+        padding: const EdgeInsets.all(15),
         child: Column(
           children: [
-            _textboxNama(),
-            _textboxNIM(),
-            _textboxTahun(),
+            _buildFormCard(_textboxNama()),
+            const SizedBox(height: 10),
+            _buildFormCard(_textboxNIM()),
+            const SizedBox(height: 10),
+            _buildFormCard(_textboxTahun()),
             const SizedBox(height: 20),
-            _tombolSimpan()
+            _tombolSimpan(),
           ],
         ),
+      ),
+    );
+  }
+
+  Widget _buildFormCard(Widget child) {
+    return Card(
+      elevation: 5,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(15),
+      ),
+      child: Padding(
+        padding: const EdgeInsets.all(10),
+        child: child,
       ),
     );
   }
